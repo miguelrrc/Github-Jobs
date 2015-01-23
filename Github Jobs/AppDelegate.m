@@ -16,6 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog(@"Hi, I'm a sample application for a book.");
     // Override point for customization after application launch.
     return YES;
 }
