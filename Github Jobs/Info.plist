@@ -15,11 +15,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.3</string>
+	<string>0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.3</string>
+	<string>DEVELOPMENT</string>
+	<key>CWBuildNumber</key>
+	<string>0</string>
 	<key>GithubJobsEndpoint</key>
 	<string>$(GITHUB_JOBS_ENDPOINT)</string>
 	<key>LSRequiresIPhoneOS</key>

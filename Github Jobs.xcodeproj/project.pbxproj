@@ -155,11 +155,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB7600D91A7244810020B779 /* Build configuration list for PBXNativeTarget "Github Jobs" */;
 			buildPhases = (
+				EB10EF261A76669F007882A5 /* Set the build number to git commits count */,
 				6553BB840D56F63C96CA7670 /* Check Pods Manifest.lock */,
 				EB7600B21A7244800020B779 /* Sources */,
 				EB7600B31A7244800020B779 /* Frameworks */,
 				EB7600B41A7244800020B779 /* Resources */,
 				D17206A00CF0C581D0A769BF /* Copy Pods Resources */,
+				EB10EF271A76693B007882A5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -275,6 +277,33 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Github Jobs/Pods-Github Jobs-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EB10EF261A76669F007882A5 /* Set the build number to git commits count */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set the build number to git commits count";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"";
+		};
+		EB10EF271A76693B007882A5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Set the build number to \"DEVELOPMENT\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion DEVELOPMENT\" \"${INFOPLIST_FILE}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
